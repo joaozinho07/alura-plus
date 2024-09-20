@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+*{ /*resetei o site*/
+    padding: 0;
+    margin: 0;
+}
+
+
+:root{
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --botao-azul: #167BF7;
+    --cor-de-fundo: #00030C;
+    --fonte-principal: 'inter';
+    --botao-azul-efeito: #64a8fa;
+}
+
+body{
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container{
+    height: 100vh; /*essa propriedade faz com que a imagem pegue toda a section*/
+    display: grid;
+    grid-template-columns: 50% 50%; 
+}
+
+.principal {
+    background-image: url("img/Background.png"); /*essa proprieade coloca a imagem de fundo*/
+    background-repeat: no-repeat; /*essa propriedade faz com que a imagem não se repita*/
+    background-size: contain; /*essa proprieade resolve o espaçamento à esquerda, assim, ele vai pegar toda a section e vai preenchê-la.*/
+    align-items: center;
+    text-align: center;
+}
+
+
+.container__caixa{
+    margin: 0 6em;
+}
+
+.container__titulo{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.container__imagem{
+    margin: 1em 0 2em 0;
+}
+
+.container__botao{
+    background-color: var(--botao-azul);
+    padding: 1rem;
+    border-radius: 5px;
+    color: var(--branco-principal);
+    display: block;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+.container__botao:hover{
+    background-color: var(--botao-azul-efeito);
+    color: var(--cor-de-fundo)
+}   
+
+.botao__secundario{
+    background-color: transparent;
+    border: 2px solid var(--branco-principal);
+}
+
+ 
+.container__aviso{
+    font-size: 12px;
+    color: var(--cinza-secundario);
+}
+
+/*seção secundaria*/
+.secundario{
+    align-items: center;
+    margin: 0 10em; 
+}
+
+.secundario__imagem{
+    width: 80%;
+}
+
+.descricao__titulo{
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--branco-principal);
+    margin: 0.1em;
+}
+
+.descricao__paragrafo{
+    color: var(--cinza-secundario);
+}
+
+/*seção terceira*/
+.secundario__botao{
+    display: inline-block; /*O display: inline-block ele tenta pegar as melhores partes inline e do block ou seja, o inline ele tranforma o evento em linha, ele coloca o tamanho conforme a quantidade de informação dentro do botão*/ /*E o block, ele faz a quebra de texto, ou seja, sem ele, o boão ia ficar em cima do paragrafo*/
+    margin-top: 1em;
+}
+
+.container__descricao{
+    padding: 3em;
+}
+
+/*seção dispositivos*/
+.dispositivos{
+    text-align: center;
+}
+
+.dispositivos__titulo{
+    font-size: 48px;
+    color: var(--branco-principal);
+}
+
+.dispositivos__lista{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 5em 0;
+}
+
+.lista__item{
+    font-size: 32px;
+    color: var(--branco-principal);
+}
+
+/*rodapé*/
+.rodape{
+    margin: 5em 3em;
+    text-align: center;
+}
+
+.rodape__logo{
+    margin: 2em 0;
+}
+
+.rodape__lista{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 1em;
+}
+
+.lista__link a{
+    text-decoration: none;
+    color: var(--branco-principal);
+}
+
+.lista__link a:hover{
+    color: var(--botao-azul);
+}
+
+.lista__link a:active{
+    color: purple;
+}
+
+
+.rodape__texto{
+    color: var(--cinza-secundario);
+    margin: 2em 0;
+    padding: 0 12em;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/*Tornando o site Responsivo*/
+
+@media (max-width: 1200px){
+    
+    /*Primeira seção*/
+    .container{
+        display: block; /*o display block deixa um elemento um em cima do outro*/
+        background-image: none; /*tirou a imagem de fundo*/
+    }
+
+    .container__imagem{
+        width: 50vw; /*O width de 50vw, ele ocupa 50% do tamanho da página*/
+    }
+ 
+    .container__caixa{
+        margin: 2em 2em;
+    }
+
+    /*Segunda, terceira e quarta seção*/
+    .secundario{
+        margin: 0; /*tira a margem da section para caber na imagem*/
+        text-align: center; /*alinhei os elementos dessa seção*/
+    }
+
+    .secundario__imagem{
+        width: 50vw; /*diminuiu a imagem*/
+    }
+
+    .descricao__titulo{
+        font-size: 2rem;
+    }
+
+    /*seção de dispositivos*/
+    .dispositivos__titulo{
+        font-size: 2rem;
+    }
+
+    .dispositivos__lista{
+        display: block;
+    }
+
+    .dispositivos__lista img{
+        width: 50vw;
+    }
+
+    .lista__item{
+        font-size: 1.5rem;
+
+    }
+
+    /*rodapé*/
+       
+    .rodape__lista{
+        display: block;
+    }
+   
+    .rodape__texto{
+        padding: 0 1em;
+    }
+}
